@@ -1,6 +1,23 @@
 <h2>Lista Personas</h2>
-<ng-container *ngFor = "let persona of personas">
-    <p>{{persona.nombre}} {{persona.apellido}}</p>
+
+<!-- <ng-container *ngFor = "let persona of personas">
+    <span (click)="onSelect(persona)">{{persona.nombre}} {{persona.apellido}}</span>
+</ng-container> -->
+
+<ng-container *ngIf = "personas.length > 0">
+    <div *ngFor = "let persona of personas" (click)="onSelect(persona)">
+        {{persona.nombre}} {{persona.apellido}}
+    </div>
 </ng-container>
+
+<hr>
+<h2>Detalle</h2>
+<div *ngIf="selectedPersona && selectedPersona.id != 0">
+    
+    <div>ID: {{selectedPersona.id}}</div>
+    <div>Fecha Nacimiento: {{selectedPersona.fechaNacimiento}}</div>
+    <div>RUT: {{selectedPersona.rut}}</div>
+    <div>Observacion: {{selectedPersona.observacion}}</div>
+</div>
 
 

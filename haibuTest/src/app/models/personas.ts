@@ -8,6 +8,7 @@ export class Persona {
     fechaNacimiento: Date = new Date();
     direccion: Direccion = new Direccion();
     activo: number = 0;
+    observacion: string = "";
 }
 
 export class Direccion {
